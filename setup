@@ -1,0 +1,147 @@
+#!/bin/bash
+
+# A bash script for installing apps, icons, and themes, as well as setting up other features.
+# This script assumes we're running Ubuntu or some other Debian-based system.
+
+clear
+
+# Preliminiary setup.
+
+if [ $(tput colors) ]; then # Check if the terminal supports colors
+red="\e[31m"
+green="\e[32m"
+blue="\e[34m"
+endcolor="\e[39m"
+fi
+
+sudo -s << EOF #run as sudo.
+
+echo "| Adding Repositories |" #Add repos and update.
+(
+apt-add-repository ppa:videolan/stable-daily -y #VLC
+apt-add-repository ppa:otto-kesselgulasch/gimp -y #GIMP
+apt-add-repository ppa:moka/stable -y
+apt-add-repository ppa:numix/ppa -y #Numix
+apt-add-repository ppa:chromium-daily/stable -y
+apt-add-repository ppa:webupd8team/atom -y #Atom
+apt-add-repository ppa:snwh/pulp -y
+apt-add-repository ppa:djcj/screenfetch -y #Screenfetch
+add-apt-repository ppa:gnome-terminator -y #Terminator
+
+apt-get update
+) &> /dev/null
+
+echo -------------------------------------
+echo         "Now installing apps"
+echo -------------------------------------
+echo " "
+
+echo "Atom"
+(
+apt-get -y install atom
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor"; #Hide the output and return success or fail status.
+
+echo "VLC"
+(
+apt-get -y install vlc
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "GIMP"
+(
+apt-get -y install gimp
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "Chromium"
+(
+apt-get -y install chromium-browser
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "FileZilla"
+(
+apt-get -y install filezilla
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "Autokey"
+(
+apt-get -y install autokey-gtk
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "Terminator"
+(
+apt-get -y install terminator
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "ScreenFetch"
+(
+apt-get -y install screenfetch
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "File archiving tools"
+(
+apt-get install unace rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller -y
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "| Installing Ubuntu Restricted Extras |"
+(
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+apt-get install ttf-mscorefonts-installer -y
+apt-get install ubuntu-restricted-addons -y
+apt-get install gstreamer0.10-plugins-bad-multiverse -y
+apt-get install libavcodec-extra-53 -y
+apt-get install unrar -y
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+
+echo "| Installing developer tools and setting up environment |"
+(
+apt-get -y install build-essential git
+git config --global user.name "Joseph Khawly"
+git config --global user.email josephkhawly@gmail.com
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo --------------------------------------
+echo "Now installing themes and icon packs"
+echo --------------------------------------
+echo " "
+
+echo "Numix-Circle"
+(
+apt-get -y install numix-icon-theme-circle
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "Moka"
+(
+apt-get -y install faba-icon-theme moka-icon-theme faba-mono-icons
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "Numix"
+(
+apt-get install numix-gtk-theme -y
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo "Paper"
+(
+apt-get install paper-gtk-theme -y
+) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+
+echo ------------------
+echo   "Final steps"
+echo ------------------
+echo " "
+
+echo "Upgrading packages"
+(
+sudo apt-get upgrade -y
+) &> /dev/null
+
+echo "Cleaning up"
+(
+sudo apt-get autoclean -y
+sudo apt-get autoremove -y
+sudo apt-get clean -y
+) &> /dev/null
+
+EOF
+
+echo "All done!"
+exit 0
