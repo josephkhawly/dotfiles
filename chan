@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then # List usage if args are incorrect.
+  echo "Usage: $0 board thread_number"
+  exit 1
+fi
+
+wget -q http://boards.4chan.org/$1/$2 | sed -e 's/href/\n/g' | grep "here</a> to view"
+
+echo "I'm getting those pics for you now, son. This might take some time."
+
+# Don't download ther robots.txt. -A specifies which file types to be downloaded.
+# Don't download anything that ends with s.*
+# save to a directory called $board-$thread_number
+wget -q -e robots=off -ndp -t 0 -Hkrl 0 -I "$1" -A jpg,jpeg,gif,tif,png,webm -R *s.* -P $1-$2 "boards.4chan.org/$1/res/$2"
+echo "The pics have been saved to the directory $1-$2/"

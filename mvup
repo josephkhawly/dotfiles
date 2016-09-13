@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# mvup
+# it takes all the files in a directory, moves it up one, and removes the directory is used to be in.
+
+mv $1/* .
+rm -r $1
