@@ -3,101 +3,27 @@
 # A bash script for installing apps, icons, and themes, as well as setting up other features.
 # This script assumes we're running Ubuntu or some other Debian-based system.
 
-clear
-
-# Preliminiary setup.
-
-if [ $(tput colors) ]; then # Check if the terminal supports colors
-red="\e[31m"
-green="\e[32m"
-blue="\e[34m"
-endcolor="\e[39m"
-fi
-
-sudo -s << EOF #run as sudo.
-
-echo "| Adding Repositories |" #Add repos and update.
-(
-apt-add-repository ppa:videolan/stable-daily -y #VLC
-apt-add-repository ppa:otto-kesselgulasch/gimp -y #GIMP
-apt-add-repository ppa:moka/stable -y
-apt-add-repository ppa:numix/ppa -y #Numix
-apt-add-repository ppa:chromium-daily/stable -y
-apt-add-repository ppa:snwh/pulp -y
-add-apt-repository ppa:gnome-terminator -y #Terminator
-add-apt-repository ppa:papirus/papirus -y
+sudo apt-add-repository ppa:videolan/stable-daily -y
+sudo apt-add-repository ppa:otto-kesselgulasch/gimp -y
+sudo apt-add-repository ppa:moka/stable -y
+sudo apt-add-repository ppa:numix/ppa -y #Numix
+sudo apt-add-repository ppa:chromium-daily/stable -y
+sudo apt-add-repository ppa:snwh/pulp -y
+sudo add-apt-repository ppa:gnome-terminator -y 
+sudo add-apt-repository ppa:papirus/papirus -y
 
 apt update
-) &> /dev/null
 
-echo -------------------------------------
-echo         "Now installing apps"
-echo -------------------------------------
-echo " "
+cat packages.txt | xargs sudo apt install -y
 
-apt -y install vlc gimp firefox chromium-browser filezilla terminator neofetch
-
-echo "File archiving tools"
-(
-apt install unace rar unrar p7zip-rar p7zip zip unzip sharutils uudeview mpack arj cabextract file-roller -y
-) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
-
-echo "| Installing Ubuntu Restricted Extras |"
-(
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
-apt install ttf-mscorefonts-installer -y
-apt install ubuntu-restricted-addons -y
-apt install gstreamer0.10-plugins-bad-multiverse -y
-apt install libavcodec-extra-53 -y
-apt install unrar -y
-) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
+sudo apt install ttf-mscorefonts-installer -y
 
-
-echo "| Installing developer tools and setting up environment |"
-(
-apt -y install build-essential git
 git config --global user.name "Joseph Khawly"
 git config --global user.email joseph.khawly@gmail.com
-) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
 
-echo --------------------------------------
-echo "Now installing themes and icon packs"
-echo --------------------------------------
-echo " "
-
-echo "Numix-Circle"
-(
-apt -y install numix-icon-theme-circle
-) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
-
-echo "Numix"
-(
-apt install numix-gtk-theme -y
-) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
-
-echo "Papirus"
-(
-apt install papirus-gtk-theme -y
-) &> /dev/null && echo -e "$green OK $endcolor" || echo -e "$red FAILED $endcolor";
-
-echo ------------------
-echo   "Final steps"
-echo ------------------
-echo " "
-
-echo "Upgrading packages"
-(
 sudo apt upgrade -y
-) &> /dev/null
 
-echo "Cleaning up"
-(
 sudo apt autoclean -y
 sudo apt autoremove -y
 sudo apt clean -y
-) &> /dev/null
-
-EOF
-
-echo "All done!"
-exit 0
