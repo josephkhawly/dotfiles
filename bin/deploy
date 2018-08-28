@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# A script for my personal website that pushes the changes to its github repo
+# And then pulls those changes on the server it's hosted on.
+
+# echo "Pushing to remote repo..."
+git push origin master
+
+# echo "Deploying changes to server..."
+ssh pi@josephkhawly.com -t "cd /var/www/; git pull"
+
+echo "All done"

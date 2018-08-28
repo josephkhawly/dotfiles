@@ -1,20 +1,34 @@
 # editing files
-# replace 'atom' with whatever text editor you prefer.
-alias mod='atom ~/.bashrc'
-alias ea='atom ~/.bash_aliases'
+alias mod='code ~/.bashrc'
+alias ea='code ~/.bash_aliases'
 alias src='source ~/.bash_aliases && echo "sourced"'
 
 # apt-get
-alias up='sudo apt-get update && sudo apt-get upgrade'
-alias get='sudo apt-get install'
-alias purge='sudo apt-get purge'
-alias ac='sudo apt-get autoclean && sudo apt-get autoremove'
+alias up='sudo apt update && sudo apt upgrade -y'
+alias get='sudo apt install'
+alias purge='sudo apt purge'
+alias ac='sudo apt autoclean && sudo apt autoremove'
 alias addrepo='sudo apt-add-repository'
-alias lookfor='apt-cache search'
+alias lookfor='apt search'
+
+alias pip='python -m pip'
+
+alias c='clear'
+
+# Update all git repos in a directory
+# Found at https://stackoverflow.com/questions/3497123/run-git-pull-over-all-subdirectories
+alias pullall='ls | xargs -P10 -I{} git -C {} pull'
+
+alias sudo='sudo' # lets you use sudo with aliases
+
+# cd'ing
+alias dev='cd ~/Developer'
+alias ..='cd ..'
 
 # SSH
-alias purdue='ssh jkhawly@data.cs.purdue.edu'
-alias pi='ssh pi@josephkhawly.com'
+alias purdue='ssh data.cs.purdue.edu -l jkhawly'
+alias 354ssh='ssh xinu05.cs.purdue.edu -l jkhawly'
+alias rpi='ssh pi@josephkhawly.com'
 
 # ls
 alias ll='ls -alf'

@@ -8,7 +8,16 @@ case $- in
       *) return;;
 esac
 
-export PATH=~/bin:"$PATH"
+export PATH=~/bin:$PATH
+export PATH=~/.local/bin:$PATH
+export GOPATH=~/Developer/golang
+# export PATH=/home/joseph/bin:/home/joseph/bin:/home/joseph/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/devkitpro/devkitARM/bin
+export DEVKITPRO=/usr/local/devkitpro
+export DEVKITARM=/usr/local/devkitpro/devkitARM
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+
+eval $(thefuck --alias) # because I'm using this: github.com/nvbn/thefuck
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -58,10 +67,17 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-
+white="\e[38;5;15m"
+lightgreen="\e[38;5;155m"
+darkgreen="\e[38;5;48m"
+blue="\e[38;5;27m"
 if [ "$color_prompt" = yes ]; then
-    # prompt displays as [hostname ~]%
-    PS1="\[\033[38;5;15m\][\[\033[38;5;155m\]\h\[\033[38;5;15m\]\[\033[38;5;48m\] \w\[\033[38;5;15m\]]% "
+    # prompt displays as [hostname ~:branch]%
+    PS1="\[${white}\]["
+    PS1+="\[${lightgreen}\]\h " # hostname
+    PS1+="\[${darkgreen}\]\w" # working directory
+    PS1+="\$(__git_ps1 '\[${blue}\] >%s')" # current branch (if it's a git repo)
+    PS1+="\[${white}\]]% "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -92,6 +108,10 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+if [ -f ~/bin/sensible.bash ]; then
+   source ~/bin/sensible.bash
+fi
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -112,7 +132,26 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Display a random fortune on startup. -s makes sure it's only the short ones.
+# --- Fun with cowsay ---
+
+# Change the cow's look depending on the nearest holiday
+COWFLAGS=""
+case $(date +"%b") in
+    "Oct") COWFLAGS+="-f skeleton"; ;; # Halloween
+    "Nov") COWFLAGS+="-f turkey"; ;; # Thanksgiving
+    "Dec") COWFLAGS+="-f snowman"; ;; # Christmas
+esac;
+
+if [ $(date +"%b%d") == "Apr20" ]; then # 4/20
+    COWFLAGS+="-s"
+fi
+
+# The cow will look tired between the hours of 10PM and 7AM
+if [ $(date +%k%M) -gt 2200 -o $(date +%k%M) -lt 700 ]; then
+    COWFLAGS+=" -t"
+fi
+
+# Make the cow say a fortune and output with rainbow characters
 if [ -x /usr/games/fortune ]; then
-    /usr/games/fortune -s
+    fortune -s | cowsay $COWFLAGS | lolcat
 fi

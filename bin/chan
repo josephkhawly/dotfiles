@@ -7,8 +7,6 @@ fi
 
 wget -q http://boards.4chan.org/$1/$2 | sed -e 's/href/\n/g' | grep "here</a> to view"
 
-echo "I'm getting those pics for you now, son. This might take some time."
-
 # Don't download ther robots.txt. -A specifies which file types to be downloaded.
 # Don't download anything that ends with s.*
 # save to a directory called $board-$thread_number
