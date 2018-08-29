@@ -25,3 +25,4 @@ papirus-gtk-theme
 build-essential
 git
 unrar
+libreoffice
