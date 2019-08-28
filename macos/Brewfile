@@ -1,0 +1,48 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "shopify/shopify"
+brew "bash-completion"
+brew "python"
+brew "cask"
+brew "cowsay"
+brew "ffmpeg"
+brew "fortune"
+brew "imagemagick"
+brew "mas"
+brew "postgresql", restart_service: true
+brew "postgis"
+brew "ruby"
+brew "sl"
+brew "speedtest-cli"
+brew "thefuck"
+brew "tldr"
+brew "wget"
+brew "wifi-password"
+brew "yarn"
+brew "youtube-dl"
+brew "shopify/shopify/themekit"
+cask "appcleaner"
+cask "dropbox"
+cask "firefox"
+cask "google-chrome"
+cask "inkscape"
+cask "iterm2"
+cask "macdown"
+cask "plex-media-player"
+cask "plexamp"
+cask "private-internet-access"
+cask "sourcetree"
+cask "spotify"
+cask "visual-studio-code"
+cask "vlc"
+cask "xquartz"
+mas "Keynote", id: 409183694
+mas "LastPass", id: 926036361
+mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
+mas "The Unarchiver", id: 425424353
+mas "Xcode", id: 497799835
