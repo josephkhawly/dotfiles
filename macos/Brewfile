@@ -3,26 +3,49 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "shopify/shopify"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Programmable completion for Bash 3.2
 brew "bash-completion"
+# SSL/TLS cryptography library
+brew "openssl"
+# Interpreted, interactive, object-oriented programming language
 brew "python"
+# Emacs dependency management
 brew "cask"
+# Configurable talking characters in ASCII art
 brew "cowsay"
+# Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Infamous electronic fortune-cookie generator
 brew "fortune"
+# Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Mac App Store command-line interface
 brew "mas"
+# Object-relational database system
 brew "postgresql", restart_service: true
+# Adds support for geographic objects to PostgreSQL
 brew "postgis"
+# Powerful, clean, object-oriented scripting language
 brew "ruby"
+# Prints a steam locomotive if you type sl instead of ls
 brew "sl"
+# Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
+# Programatically correct mistyped console commands
 brew "thefuck"
+# Simplified and community-driven man pages
 brew "tldr"
+# Internet file retriever
 brew "wget"
+# Show the current WiFi network password
 brew "wifi-password"
+# JavaScript package manager
 brew "yarn"
+# Download YouTube videos from the command-line
 brew "youtube-dl"
+# Theme Kit is a tool kit for manipulating shopify themes
 brew "shopify/shopify/themekit"
 cask "appcleaner"
 cask "dropbox"
@@ -34,6 +57,12 @@ cask "macdown"
 cask "plex-media-player"
 cask "plexamp"
 cask "private-internet-access"
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-json"
+cask "quicklookase"
 cask "sourcetree"
 cask "spotify"
 cask "visual-studio-code"
