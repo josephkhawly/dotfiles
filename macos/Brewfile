@@ -21,6 +21,8 @@ brew "ffmpeg"
 brew "fortune"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Command-line interface for Git, optimized for workflow simplicity
+brew "legit"
 # Mac App Store command-line interface
 brew "mas"
 # Object-relational database system
