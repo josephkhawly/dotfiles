@@ -1,0 +1,6 @@
+#!/bin/bash
+source `which virtualenvwrapper.sh`
+
+ENVIRONMENT=${PWD##*/}
+workon $ENVIRONMENT
+

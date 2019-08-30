@@ -1,0 +1,17 @@
+# install xcode tools
+xcode-select --install
+
+# install homebrew
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+ 
+# Update homebrew
+brew update
+
+# clone git repo with scripts
+
+# move scripts and set permissions
+
+# Install homebrew packages, casks, and Mac App Store apps
