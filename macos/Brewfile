@@ -19,6 +19,8 @@ brew "cowsay"
 brew "ffmpeg"
 # Infamous electronic fortune-cookie generator
 brew "fortune"
+# Small git utilities
+brew "git-extras"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Command-line interface for Git, optimized for workflow simplicity

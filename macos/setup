@@ -3,7 +3,6 @@ xcode-select --install
 
 # install homebrew
 if test ! $(which brew); then
-  echo "Installing homebrew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
  
@@ -15,8 +14,10 @@ brew update
 # move scripts and set permissions
 
 # Install homebrew packages, casks, and Mac App Store apps
+brew bundle
+
+brew cleanup
 
 # Set shell
-
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
