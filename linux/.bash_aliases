@@ -26,8 +26,6 @@ alias dev='cd ~/Developer'
 alias ..='cd ..'
 
 # SSH
-alias purdue='ssh data.cs.purdue.edu -l jkhawly'
-alias 354ssh='ssh xinu05.cs.purdue.edu -l jkhawly'
 alias rpi='ssh pi@josephkhawly.com'
 
 # ls
