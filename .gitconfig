@@ -1,0 +1,23 @@
+[user]
+	name = Joseph Khawly
+	email = jkhawly@mouthwateringmedia.com
+[core]
+	excludesfile = /Users/josephkhawly/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/josephkhawly/.stCommitMsg
+[pager]
+	diff = false
+	branches = false
+[alias]
+	switch = !legit switch
+	sync = !legit sync
+	publish = !legit publish
+	unpublish = !legit unpublish
+	undo = !legit undo
+	branches = !legit branches

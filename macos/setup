@@ -15,3 +15,8 @@ brew update
 # move scripts and set permissions
 
 # Install homebrew packages, casks, and Mac App Store apps
+
+# Set shell
+
+sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+chsh -s /usr/local/bin/bash
