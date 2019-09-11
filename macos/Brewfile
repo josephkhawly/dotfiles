@@ -7,16 +7,18 @@ tap "shopify/shopify"
 brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
-# SSL/TLS cryptography library
-brew "openssl"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
+# SSL/TLS cryptography library
+brew "openssl"
 # Emacs dependency management
 brew "cask"
 # Configurable talking characters in ASCII art
 brew "cowsay"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
 # Infamous electronic fortune-cookie generator
 brew "fortune"
 # Small git utilities
@@ -52,6 +54,7 @@ brew "youtube-dl"
 # Theme Kit is a tool kit for manipulating shopify themes
 brew "shopify/shopify/themekit"
 cask "appcleaner"
+cask "bettertouchtool"
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"

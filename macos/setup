@@ -10,6 +10,7 @@ fi
 brew update
 
 # clone git repo with scripts
+mkdir Developer && cd Developer/
 
 # move scripts and set permissions
 
