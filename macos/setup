@@ -14,14 +14,10 @@ brew update
 
 # move scripts and set permissions
 mkdir ~/bin
-cp ../bin/* ~/
+cp ../bin/* ~/bin
 chmod +x ~/bin/*
 
 # Install homebrew packages, casks, and Mac App Store apps
 brew bundle
 
 brew cleanup
-
-# Set shell
-# sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-# chsh -s /usr/local/bin/bash

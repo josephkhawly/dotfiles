@@ -1,0 +1,18 @@
+# editing files
+alias mod='code ~/.zshrc'
+alias ea='code ~/.zsh_aliases'
+alias src='source ~/.bash_aliases && echo "sourced"'
+
+alias lookfor='brew search'
+alias up='brew update && brew upgrade && brew cask upgrade'
+
+alias pip='python3 -m pip'
+
+alias c='clear'
+
+alias cotidie='cd ~/Developer/work/cotidie-theme && code .'
+alias trop='cd ~/Developer/work/tropicales && code .'
+alias inv='cd ~/Developer/work/inventure && code .'
+
+# SSH
+alias rpi='ssh pi@josephkhawly.com'
