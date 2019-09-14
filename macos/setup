@@ -14,7 +14,7 @@ brew update
 
 # move scripts and set permissions
 mkdir ~/bin
-cp ../bin/* ~/bin
+cp ../bin/* ~/bin/
 chmod +x ~/bin/*
 
 # Install homebrew packages, casks, and Mac App Store apps

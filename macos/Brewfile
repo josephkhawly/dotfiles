@@ -57,6 +57,7 @@ brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
 cask "appcleaner"
+cask "bettertouchtool"
 cask "dropbox"
 cask "firefox"
 cask "font-hack-nerd-font"
