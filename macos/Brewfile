@@ -27,6 +27,8 @@ brew "git-extras"
 brew "imagemagick"
 # Command-line interface for Git, optimized for workflow simplicity
 brew "legit"
+# Keep your Mac's application settings in sync
+brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
 # Object-relational database system
@@ -57,6 +59,7 @@ cask "appcleaner"
 cask "bettertouchtool"
 cask "dropbox"
 cask "firefox"
+cask "google-backup-and-sync"
 cask "google-chrome"
 cask "inkscape"
 cask "iterm2"
