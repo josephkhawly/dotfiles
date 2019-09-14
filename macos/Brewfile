@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "shopify/shopify"
@@ -9,8 +10,6 @@ brew "bash"
 brew "bash-completion"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
-# SSL/TLS cryptography library
-brew "openssl"
 # Emacs dependency management
 brew "cask"
 # Configurable talking characters in ASCII art
@@ -31,6 +30,10 @@ brew "legit"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
+# Fast, highly customisable system info script
+brew "neofetch"
+# SSL/TLS cryptography library
+brew "openssl"
 # Object-relational database system
 brew "postgresql", restart_service: true
 # Adds support for geographic objects to PostgreSQL
@@ -53,15 +56,12 @@ brew "wifi-password"
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# Theme Kit is a tool kit for manipulating shopify themes
-brew "shopify/shopify/themekit"
 cask "appcleaner"
-cask "bettertouchtool"
 cask "dropbox"
 cask "firefox"
+cask "font-hack-nerd-font"
 cask "google-backup-and-sync"
 cask "google-chrome"
-cask "inkscape"
 cask "iterm2"
 cask "macdown"
 cask "plex-media-player"
