@@ -10,9 +10,12 @@ fi
 brew update
 
 # clone git repo with scripts
-mkdir Developer && cd Developer/
+# mkdir Developer && cd Developer/
 
 # move scripts and set permissions
+mkdir ~/bin
+cp ../bin/* ~/
+chmod +x ~/bin/*
 
 # Install homebrew packages, casks, and Mac App Store apps
 brew bundle
@@ -20,5 +23,5 @@ brew bundle
 brew cleanup
 
 # Set shell
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-chsh -s /usr/local/bin/bash
+# sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+# chsh -s /usr/local/bin/bash
