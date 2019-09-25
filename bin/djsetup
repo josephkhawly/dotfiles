@@ -5,7 +5,7 @@ source `which virtualenvwrapper.sh`
 mkvirtualenv --system-site-packages ${PWD##*/}
 pip install -r requirements.txt
 
-cp ~/Developer/${HOSTNAME}.py /main/settings # copy machine files
+cp ~/Developer/${HOSTNAME}.py main/settings # copy machine files
 touch main/settings/PASSWORDS.py # create PASSWORDS
 
 # make db and user
