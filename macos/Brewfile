@@ -83,6 +83,8 @@ cask "spotify"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
+mas "Amphetamine", id: 937984704
+mas "Backtrack", id: 1477089520
 mas "Keynote", id: 409183694
 mas "LastPass", id: 926036361
 mas "Magnet", id: 441258766
