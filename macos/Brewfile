@@ -42,8 +42,6 @@ brew "neofetch"
 brew "postgresql"
 # Adds support for geographic objects to PostgreSQL
 brew "postgis"
-# Convert bitmaps to vector graphics
-brew "potrace"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Prints a steam locomotive if you type sl instead of ls
@@ -58,21 +56,16 @@ brew "tldr"
 brew "wget"
 # Show the current WiFi network password
 brew "wifi-password"
-# The personal information dashboard for your terminal
-brew "wtfutil"
 # JavaScript package manager
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
 # Theme Kit is a tool kit for manipulating shopify themes
 brew "shopify/shopify/themekit"
-cask "android-messages"
-cask "androidtool"
 cask "appcleaner"
 cask "apple-juice"
 cask "bettertouchtool"
 cask "cleanmymac"
-cask "code-notes"
 cask "dropbox"
 cask "firefox"
 cask "font-hack-nerd-font"
@@ -101,6 +94,9 @@ cask "vlc"
 cask "xquartz"
 mas "Amphetamine", id: 937984704
 mas "Backtrack", id: 1477089520
+mas "CopyClip", id: 595191960
+mas "Dynamo", id: 1445910651
+mas "Jira", id: 1475897096
 mas "LastPass", id: 926036361
 mas "Magnet", id: 441258766
 mas "The Unarchiver", id: 425424353
