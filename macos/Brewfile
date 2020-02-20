@@ -12,6 +12,8 @@ brew "bash-completion"
 brew "openssl@1.1"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Emacs dependency management
 brew "cask"
 # Configurable talking characters in ASCII art
@@ -28,6 +30,8 @@ brew "geos"
 brew "git-extras"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Helps you navigate your file system faster by learning your habits
 brew "jump"
 # Command-line interface for Git, optimized for workflow simplicity
@@ -39,7 +43,7 @@ brew "mas"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Object-relational database system
-brew "postgresql"
+brew "postgresql", restart_service: true
 # Adds support for geographic objects to PostgreSQL
 brew "postgis"
 # Powerful, clean, object-oriented scripting language
