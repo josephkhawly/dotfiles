@@ -1,3 +1,4 @@
+tap "clintmod/formulas"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -64,6 +65,8 @@ brew "wifi-password"
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
+# Backup and Restore your Mac System and App Preferences
+brew "clintmod/formulas/macprefs"
 # Theme Kit is a tool kit for manipulating shopify themes
 brew "shopify/shopify/themekit"
 cask "appcleaner"
