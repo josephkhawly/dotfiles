@@ -1,0 +1,4 @@
+cp ~/bin/* ~/Developer/dotfiles/bin
+
+git commit -am "Sync scripts"
+git push origin master
