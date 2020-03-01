@@ -1,0 +1,9 @@
+# Updates Brewfile with new packages and commits to repo
+cd ~/Developer/dotfiles/macos
+
+brew bundle dump --force --describe
+
+git commit -am "Update Brewfile"
+git push origin master
+
+cd

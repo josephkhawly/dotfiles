@@ -2,13 +2,15 @@
 source `which virtualenvwrapper.sh`
 
 # set up virtualenv and install requirements
-mkvirtualenv --system-site-packages ${PWD##*/}
+mkvirtualenv --python=python2.7 --system-site-packages ${PWD##*/}
 pip install -r requirements.txt
-
-cp ~/Developer/${HOSTNAME}.py main/settings # copy machine files
-touch main/settings/PASSWORDS.py # create PASSWORDS
 
 # make db and user
 createdb ${PWD##*/}
 createuser -s ${PWD##*/}
 
+# Create necessary files and run migrations
+# touch ./main/settings/$(hostname | sed -re 's/-/_/g').py
+cp ./main/settings/tasmans_macbook_pro_local.py ./main/settings/$(hostname).py
+touch ./main/settings/PASSWORDS.py
+./manage.py migrate

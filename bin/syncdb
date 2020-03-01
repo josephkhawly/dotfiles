@@ -1,0 +1,6 @@
+./scripts/sync_production_to_local.sh
+dbname="$(basename *.latest.gz .latest.gz)"
+dropdb $dbname
+createdb $dbname
+gunzip < $dbname.latest.gz | psql $dbname
+rm $dbname.latest.gz

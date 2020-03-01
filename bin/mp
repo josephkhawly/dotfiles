@@ -3,6 +3,7 @@
 case "$1" in
 mm) ./manage.py makemigrations ;;
 mi) ./manage.py migrate ;;
+sd) ./manage.py seed ;;
 rs) ./manage.py runserver 0:3000;;
 all) ./manage.py makemigrations && ./manage.py migrate && ./manage.py runserver 0:3000 ;;
 *) echo "Invalid command" ;;
