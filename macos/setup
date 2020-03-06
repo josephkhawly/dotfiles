@@ -1,23 +1,32 @@
+set -x -e
+
 # install xcode tools
+echo "===== Installing Xcode Tools ====="
 xcode-select --install
 
 # install homebrew
+echo "===== Installing Homebrew ====="
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
  
 # Update homebrew
+echo "===== Updating Brew ====="
 brew update
 
 # clone git repo with scripts
-# mkdir Developer && cd Developer/
+
+echo "===== Creating Developer Folder ====="
+mkdir ~/Developer
 
 # move scripts and set permissions
+echo "===== Grabbing scripts ====="
 mkdir ~/bin
 cp ../bin/* ~/bin/
 chmod +x ~/bin/*
 
 # Install homebrew packages, casks, and Mac App Store apps
+echo "===== Installing apps from Brew ====="
 brew bundle
 
 brew cleanup
