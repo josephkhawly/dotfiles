@@ -5,6 +5,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "shopify/shopify"
+# Image manipulation library
+brew "jpeg"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 3.2
@@ -12,13 +14,17 @@ brew "bash-completion"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Interpreted, interactive, object-oriented programming language
-brew "python"
+brew "python@3.9"
 # GNU multiple precision arithmetic library
 brew "gmp"
 # Emacs dependency management
 brew "cask"
 # Configurable talking characters in ASCII art
 brew "cowsay"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Secure Reliable Transport
+brew "srt"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
@@ -27,33 +33,59 @@ brew "findutils"
 brew "fortune"
 # Geometry Engine
 brew "geos"
+# GNOME XML library
+brew "libxml2"
+# Postgres C API library
+brew "libpq"
+# Geospatial Data Abstraction Library
+brew "gdal"
 # Small git utilities
 brew "git-extras"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Helps you navigate your file system faster by learning your habits
 brew "jump"
 # Command-line interface for Git, optimized for workflow simplicity
-brew "legit"
+brew "legit", link: false
 # Keep your Mac's application settings in sync
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
+# High performance, distributed memory object caching system
+brew "memcached", restart_service: true
 # Fast, highly customisable system info script
 brew "neofetch"
+# Platform built on V8 to build network applications
+brew "node@14"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Object-relational database system
 brew "postgresql", restart_service: true
 # Adds support for geographic objects to PostgreSQL
 brew "postgis"
+# Object-relational database system
+brew "postgresql@12", restart_service: true
+# Convert bitmaps to vector graphics
+brew "potrace"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.7"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Prints a steam locomotive if you type sl instead of ls
 brew "sl"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
-# Programatically correct mistyped console commands
+# Programmatically correct mistyped console commands
 brew "thefuck"
 # Simplified and community-driven man pages
 brew "tldr"
@@ -67,42 +99,58 @@ brew "yarn"
 brew "youtube-dl"
 # Backup and Restore your Mac System and App Preferences
 brew "clintmod/formulas/macprefs"
+brew "shopify/shopify/theme-check", link: false
 # Theme Kit is a tool kit for manipulating shopify themes
 brew "shopify/shopify/themekit"
-cask "appcleaner"
-cask "apple-juice"
+# Tool to customize input devices and automate computer systems
 cask "bettertouchtool"
-cask "cleanmymac"
-cask "dropbox"
+# Voice and text chat software
+cask "discord"
+# Web browser
 cask "firefox"
+cask "font-fira-code"
 cask "font-hack-nerd-font"
 cask "font-meslo-nerd-font"
 cask "google-backup-and-sync"
+# Web browser
 cask "google-chrome"
+# Vector graphics editor
 cask "inkscape"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Open-source Markdown editor
 cask "macdown"
+# App to write, plan, collaborate, and get organized
+cask "notion"
+# Home media player
 cask "plex-media-player"
+# Music player focusing on visuals
 cask "plexamp"
+# VPN client
 cask "private-internet-access"
+# QuickLook plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
+# Display image info and preview unsupported formats in QuickLook
 cask "qlimagesize"
+# QuickLook generator for Markdown files
 cask "qlmarkdown"
 cask "qlstephen"
 cask "quicklook-json"
 cask "quicklookase"
-cask "scroll-reverser"
+# Font manager
 cask "skyfonts"
+# Music streaming service
 cask "spotify"
-cask "tableplus"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Open-source version of the X.Org X Window System
 cask "xquartz"
 mas "Amphetamine", id: 937984704
 mas "Backtrack", id: 1477089520
 mas "CopyClip", id: 595191960
 mas "Dynamo", id: 1445910651
-mas "Jira", id: 1475897096
 mas "LastPass", id: 926036361
 mas "Magnet", id: 441258766
 mas "The Unarchiver", id: 425424353
